@@ -1,0 +1,6 @@
+mediapipe==0.10.35
+opencv-contrib-python==4.14.0.94
+numpy>=2,<3
+Pillow>=11,<13
+certifi>=2025.1.31
+pyobjc-framework-AVFoundation>=11,<13; sys_platform == "darwin"

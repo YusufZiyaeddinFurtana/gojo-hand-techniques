@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+models/*.task
+models/*.tflite
+models/*.part
+output/
+.impeccable/
+dist/
+.env
+.env.*
