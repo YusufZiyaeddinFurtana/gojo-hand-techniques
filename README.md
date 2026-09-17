@@ -11,7 +11,7 @@ Yerel Python/OpenCV kamera uygulaması. **Sağ el kırmızı, sol el mavi; birle
 
 **Code → Download ZIP** ile indir, klasöre çıkar, platformuna ait başlatıcıya çift tıkla. Önerilen Python: **3.12**. İlk açılış paketleri ve modelleri indirir; sonra yerelde çalışır. Açık eski sürümü önce `Q` ile kapat. Bunlar Python kaynak sürümleridir; bağımsız `.app` / `.exe` paketleri değildir.
 
-Ayrı platform ZIP'leri üretmek için `python scripts/package.py` kullan. Çıktılar `dist/gojo-hand-techniques-macos.zip` ve `dist/gojo-hand-techniques-windows.zip` olur. Hazır paketler repo **Releases** bölümünde sunulur.
+Tam repo kaynaklarından ayrı platform ZIP'leri üretmek için `python scripts/package.py` kullan. Çıktılar `dist/gojo-hand-techniques-macos.zip` ve `dist/gojo-hand-techniques-windows.zip` olur. Hazır paketler repo **Releases** bölümünde sunulur.
 
 ## Çağırma ve birleştirme
 

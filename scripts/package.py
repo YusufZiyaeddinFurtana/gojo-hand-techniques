@@ -11,7 +11,7 @@ def package(platform,launcher):
     filename = destination / f'gojo-hand-techniques-{platform}.zip'
     files = [ROOT / p for p in ('main.py','requirements.txt','README.md','THIRD_PARTY.md',launcher)]
     files += [ROOT/'scripts'/'launch.py']
-    for directory,pattern in [('gojo','*.py'),('tests','*.py'),('docs','*.md')]:
+    for directory,pattern in [('gojo','*.py'),('tests','*.py'),('docs','*.md'),('docs','*.yml')]:
         files += sorted((ROOT/directory).glob(pattern))
     with zipfile.ZipFile(filename,'w',zipfile.ZIP_DEFLATED) as archive:
         for path in files:
