@@ -1,0 +1,32 @@
+name: macOS and Windows checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  PYTHONUTF8: '1'
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python main.py --check
+      - run: python main.py --demo --headless --width 640 --height 360 --frames 540
+      - run: python main.py --demo-domain --headless --width 640 --height 360 --frames 480
+      - run: python scripts/package.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-packages-${{ matrix.os }}
+          path: dist/*.zip

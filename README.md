@@ -11,7 +11,7 @@ Yerel Python/OpenCV kamera uygulaması. **Sağ el kırmızı, sol el mavi; birle
 
 **Code → Download ZIP** ile indir, klasöre çıkar, platformuna ait başlatıcıya çift tıkla. Önerilen Python: **3.12**. İlk açılış paketleri ve modelleri indirir; sonra yerelde çalışır. Açık eski sürümü önce `Q` ile kapat. Bunlar Python kaynak sürümleridir; bağımsız `.app` / `.exe` paketleri değildir.
 
-Ayrı platform ZIP'leri üretmek için `python scripts/package.py` kullan. Çıktılar `dist/gojo-hand-techniques-macos.zip` ve `dist/gojo-hand-techniques-windows.zip` olur. Başarılı GitHub Actions çalışmasının **Artifacts** bölümünde de paketler bulunur.
+Ayrı platform ZIP'leri üretmek için `python scripts/package.py` kullan. Çıktılar `dist/gojo-hand-techniques-macos.zip` ve `dist/gojo-hand-techniques-windows.zip` olur. Hazır paketler repo **Releases** bölümünde sunulur.
 
 ## Çağırma ve birleştirme
 
@@ -113,7 +113,7 @@ Mavinin spiral merkezi, el konumları ile görüntü merkezinden tahmin edilir. 
 - Yerel Apple M4 ortamında geometri, zamanlama, atış, alan süresi ve göz çizimi otomatik testlerle kontrol edilir. Model kontrolü üç gerçek modeli yükleyip boş görüntüde çıkarım yapar.
 - Çaprazlama için bükülü parmak, eklem kesişimi, döndürme/ayna, yan yana parmak reddi, kısa titreme, gerçek takip kaybı ve farklı kare hızları test edilir.
 - Göz efekti için iris konumu, göz kırpma, maske sınırı, göz bebeği, alan kapalıyken değişmeme ve kadraj kenarı testleri vardır.
-- `.github/workflows/check.yml` macOS ve Windows üzerinde bağımlılık kurulumu, testler, model çıkarımı ve iki sentetik demoyu çalıştırır. Gerçek Windows kamerası ve farklı kullanıcıların çaprazlama başarısı cihaz üzerinde ayrıca denenmelidir; sentetik testler bu ölçümün yerine geçmez.
+- `docs/github-actions.yml` macOS ve Windows için hazır otomatik test şablonudur. Mevcut GitHub yetkisi workflow yüklemeye izin vermediği için etkinleştirilmedi; otomatik Windows çalıştırması yapılmış değildir. Yetkili bir oturumla `.github/workflows/check.yml` konumuna eklenebilir. Gerçek Windows kamerası ve farklı kullanıcıların çaprazlama başarısı cihaz üzerinde ayrıca denenmelidir; sentetik testler bu ölçümün yerine geçmez.
 - Düşük ışık, örtüşen parmaklar, gözlük yansımaları ve çok küçük yüzler takibi zorlaştırabilir. Göz efekti tek yüzü takip eder. İnsan ayırma saç kenarlarında hata yapabilir.
 
 Kod: `gojo/gestures.py` el geometrisi; `gojo/domain.py` alan tetikleme/süre; `gojo/eyes.py` yüz/iris takibi ve mavi gözler; `gojo/engine.py` çağırma/birleşme/atış; `gojo/effects.py` küreler; `gojo/void_effect.py` yıldız ortamı; `gojo/foreground.py` insan ayırma; `scripts/launch.py` ortak kurulum; `scripts/package.py` iki platform paketi.

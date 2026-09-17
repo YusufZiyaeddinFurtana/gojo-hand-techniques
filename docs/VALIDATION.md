@@ -9,4 +9,4 @@
 - Canlı kamera + insan ayırma + yüz modeli + alan çizimi 12 kare boyunca birlikte çalıştı; görüntüler kaydedilmedi. Bu denemede göz saptanmadığı için gerçek yüzde mavi göz görünümünü doğruladığı iddia edilmez. İris çizimi sentetik göz verisiyle kontrol edildi.
 - Gerçek kullanıcının çapraz parmak başarı oranı ve Windows fiziksel kamerası ayrıca denenmelidir.
 
-GitHub Actions sonuçları repo **Actions** sekmesindedir. İş akışı Windows x64 ve macOS ARM64 üzerinde kurulum, 86 test, üç modelin çıkarımı, sentetik demolar ve ZIP paketlemeyi çalıştırır. Bu dosyadaki yerel sonuçlar bir Windows donanım testi anlamına gelmez.
+GitHub otomatik testleri henüz çalıştırılamadı: Git oturumundaki token `workflow` kapsamına sahip değil; bağlı GitHub uygulaması yeni özel repoya erişemedi. Hazır şablon `docs/github-actions.yml` dosyasındadır. Yetkili bir oturumla `.github/workflows/check.yml` konumuna eklenirse Windows x64 ve macOS ARM64 üzerinde kurulum, 86 test, üç model çıkarımı, sentetik demolar ve paketlemeyi çalıştırır. Bu dosyadaki yerel sonuçlar Windows donanım testi anlamına gelmez.

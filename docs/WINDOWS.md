@@ -26,4 +26,4 @@ py -3.12 -m venv .venv
 
 **Kamera bulunamıyorsa:** Teams, Discord, OBS gibi kamerayı kullanan uygulamaları kapat; `--camera 1` dene. Meet'te efektli görüntü için README'deki OBS yöntemini kullan.
 
-**Paket kurulamadıysa:** 32-bit Python veya Windows ARM64 yerine x64 Python kullandığını kontrol et. Bu paket sürümleri için Windows x64 wheel dosyaları vardır; yerelde Windows cihazı üzerinde kamera testi yapılmamıştır. GitHub Actions Windows testi, kurulum + model çıkarımı + sentetik efekt akışını kontrol eder; gerçek kamera ve el hareketinin başarısını ölçmez.
+**Paket kurulamadıysa:** 32-bit Python veya Windows ARM64 yerine x64 Python kullandığını kontrol et. Bu paket sürümleri için Windows x64 wheel dosyaları vardır; yerelde Windows cihazı üzerinde kamera testi yapılmamıştır. Windows x64 / Python 3.12 bağımlılıkları için wheel uyumluluğu kontrol edilir; bu kontrol gerçek Windows çalıştırmasının yerine geçmez. Otomatik test şablonu `docs/github-actions.yml` içindedir, henüz etkin değildir.
